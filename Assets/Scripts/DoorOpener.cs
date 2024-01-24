@@ -3,6 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class DoorOpener : MonoBehaviour
 {
+    private const string OpenDoor = "OpenDoor";
+    
     private Animator _animator;
     private bool _isOpened = false;
 
@@ -18,7 +20,7 @@ public class DoorOpener : MonoBehaviour
 
         if (other.TryGetComponent(out ThiefMover thief))
         {
-            _animator.SetTrigger("OpenDoor");
+            _animator.SetTrigger(OpenDoor);
             _isOpened = true;
         }
     }
